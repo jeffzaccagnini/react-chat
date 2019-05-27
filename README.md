@@ -1,3 +1,3 @@
 # React Chat
 
-Demo: https://chat-app-bcda8.firebaseapp.com
+Demo: https://chat-app-bcda8.web.app
