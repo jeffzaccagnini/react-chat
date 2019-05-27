@@ -1,5 +1,5 @@
 import React from 'react';
-import { firebase, db } from './firebase';
+import { firebase, db, setupPresence } from './firebase';
 
 export const useAuth = () => {
     const [user, setUser] = React.useState(null);
@@ -16,7 +16,9 @@ export const useAuth = () => {
           setUser(user);
           db.collection('users')
             .doc(user.uid)
-            .set(user, { merge: true }) 
+            .set(user, { merge: true });
+
+            setupPresence(user);
         } else {
           setUser(null);
         }
